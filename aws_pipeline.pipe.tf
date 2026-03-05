@@ -34,6 +34,7 @@ resource "aws_codepipeline" "pipe" {
           role_arn         = lookup(action.value, "role_arn", null)
           run_order        = lookup(action.value, "run_order", null)
           region           = lookup(action.value, "region", data.aws_region.current.name)
+          namespace        = lookup(action.value, "namespace", null)
         }
       }
     }
